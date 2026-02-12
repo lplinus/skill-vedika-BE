@@ -151,7 +151,7 @@ if ($request->filled('related_to')) {
         ->where('blog_id', '!=', $currentBlog->blog_id) // exclude current blog
         ->where('category_id', $currentBlog->category_id)
         ->orderBy('published_at', 'desc')
-        ->limit(4)
+        // ->limit(4)
         ->get();
 
     return response()->json($relatedBlogs);
